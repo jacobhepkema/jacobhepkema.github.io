@@ -1,3 +1,26 @@
+// Made by Jacob Hepkema - 2023
+// First Three.js mini project, made with help from ChatGPT, copilot, 
+// StackOverflow and the Three.js docs, not in that order :)
+
+// MIT License:
+// Copyright 2023 Jacob Hepkema
+// Permission is hereby granted, free of charge, to any person obtaining a copy 
+// of this software and associated documentation files (the “Software”), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+// THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+
 var renderer, camera, controls, scene;
 let mouse = new THREE.Vector2();
 
@@ -25,8 +48,7 @@ const depth = 5;
 function init() {
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(new THREE.Color(0x000000)); // 0xEEEEEE));
-    // renderer.setClearColor(new THREE.Color(0xEEEEEE));
+    renderer.setClearColor(new THREE.Color(0x000000));
     document.body.appendChild(renderer.domElement);
 
     scene = new THREE.Scene();
@@ -45,9 +67,6 @@ function init() {
     camera.position.y = 0;
     camera.rotation.z = -45 * Math.PI / 180;
 
-    var ambient = new THREE.AmbientLight(0x555555);
-    scene.add(ambient);
-
     // Create the DNA strand
     const n_sequences = 30;
     const mid_point = n_sequences / 2;
@@ -56,7 +75,7 @@ function init() {
     const nucleotides = ['A', 'T', 'C', 'G'];
 
     for (let i = 0; i < n_sequences; i++) {
-        // create random DNA sequence of length 1000
+        // create random DNA sequence of a certain length
         let sequence = '';
         for (let j = 0; j < seq_length; j++) {
             const randomIndex = Math.floor(Math.random() * nucleotides.length);
@@ -124,13 +143,8 @@ function createBackbone(position, rotation) {
     const backbone1 = new THREE.Mesh(backboneBox, backboneMaterial);
     const backbone2 = new THREE.Mesh(backboneBox, backboneMaterial);
 
-    // set the position of the backbone boxes
-    // backbone1.position.set(0, height, depth / 2 - 10);
-    // backbone2.position.set(0, -height, depth / 2 - 10);
-
     backbone1.position.set(0, height + (backboneHeight / 2), depth / 2);
     backbone2.position.set(0, -height - (backboneHeight / 2), depth / 2);
-
 
     // rotate the backbones to orient towards next nucleotide
     backbone1.rotation.y = Math.PI / 5;
@@ -169,7 +183,6 @@ function createDNA(sequence, startPosition) {
 // Animate the DNA rotation
 function animate() {
     requestAnimationFrame(animate);
-    // scene.rotation.x += Math.PI / 180 * 0.5;
     // rotate each DNA strand separately
     scene.children.forEach((child) => {
         if (child.userData.type === 'nucleotide') {
