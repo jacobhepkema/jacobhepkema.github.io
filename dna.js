@@ -70,10 +70,10 @@ function init() {
     camera.rotation.z = -45 * Math.PI / 180;
 
     // Create the DNA strand
-    const n_sequences = 30;
+    const n_sequences = 14;
     const mid_point = n_sequences / 2;
     const spacing = 120;
-    const seq_length = 400;
+    const seq_length = 200;
     const nucleotides = ['A', 'T', 'C', 'G'];
 
     for (let i = 0; i < n_sequences; i++) {
