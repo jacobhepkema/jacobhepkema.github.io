@@ -46,7 +46,9 @@ const height = 20;
 const depth = 5;
 
 function init() {
-    renderer = new THREE.WebGLRenderer({ antialias: true });
+    // Could add { antialias: true } to the renderer to make it smoother, but
+    // it's probably slower.
+    renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(new THREE.Color(0x000000));
     document.body.appendChild(renderer.domElement);
