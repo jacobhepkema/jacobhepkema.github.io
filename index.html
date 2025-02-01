@@ -4,9 +4,12 @@
 <head>
   <title>jacobhepkema.github.io</title>
   <style>
+    html,
     body {
+      height: 100%;
       margin: 0;
       overflow: hidden;
+      padding: 0;
     }
 
     canvas {
@@ -19,10 +22,26 @@
       z-index: -9999;
     }
 
+    #section1 {
+      width: 100%;
+      /*full width*/
+      min-height: 90%;
+      text-align: center;
+      display: table;
+      /*acts like a table*/
+    }
+
+    #section1 h1 {
+      margin: 0;
+      padding: 0;
+      display: table-cell;
+      vertical-align: middle
+    }
+
     a {
-      color: rgb(0, 191, 255);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 80px;
+      color: rgb(23, 211, 235);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 24px;
       text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 8px #000;
       /* add text highlight: half transparent grey */
       background-color: rgba(148, 148, 148, 0.2);
@@ -35,12 +54,11 @@
   <script src="three.min.js"></script>
   <script src="dna.js"></script>
 
-  <center>
-    <marquee><a href="https://twitter.com/jhepkema">twitter</a></marquee>
-    <marquee><a href="https://github.com/jacobhepkema">github</a></marquee>
-    <marquee><a href="https://www.sanger.ac.uk/person/hepkema-jacob/">sanger</marquee>
-    <marquee><a href="https://bsky.app/profile/jhepkema.bsky.social">bluesky</a></marquee>
-  </center>
+  <div class="section" id="section1">
+    <h1><a href="https://www.sanger.ac.uk/person/hepkema-jacob/">sanger</a></h1><br>
+    <h1><a href="https://bsky.app/profile/jhepkema.bsky.social">bluesky</a></h1><br>
+    <h1><a href="https://github.com/jacobhepkema">github</a></h1><br>
+  </div>
 
 </body>
 

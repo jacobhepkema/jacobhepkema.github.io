@@ -34,10 +34,10 @@ const matchingNucleotide = {
 
 // define the colors of the nucleotides
 const colors = {
-    A: 0x00ff00,
-    T: 0xff0000,
-    C: 0x0000ff,
-    G: 0xffff00
+    A: 0x82cf63, // Green
+    T: 0xde6254, // Red
+    C: 0x82c6ed, // Blue
+    G: 0xdbd63d // Yellow
 };
 
 // set the dimensions of the nucleotide box
@@ -50,13 +50,13 @@ function init() {
     // it's probably slower.
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(new THREE.Color(0x000000));
+    renderer.setClearColor(new THREE.Color(0xffffff));
     document.body.appendChild(renderer.domElement);
 
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(
-        75,
+        45,
         window.innerWidth / window.innerHeight,
         0.1,
         1000
@@ -70,7 +70,7 @@ function init() {
     camera.rotation.z = -45 * Math.PI / 180;
 
     // Create the DNA strand
-    const n_sequences = 14;
+    const n_sequences = 1;
     const mid_point = n_sequences / 2;
     const spacing = 120;
     const seq_length = 200;
@@ -141,7 +141,7 @@ function createBackbone(position, rotation) {
     const backboneHeight = 4;
     const backboneDepth = 8;
     const backboneBox = new THREE.BoxGeometry(backboneWidth, backboneHeight, backboneDepth);
-    const backboneMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const backboneMaterial = new THREE.MeshBasicMaterial({ color: 0x525252 });
     const backbone1 = new THREE.Mesh(backboneBox, backboneMaterial);
     const backbone2 = new THREE.Mesh(backboneBox, backboneMaterial);
 
