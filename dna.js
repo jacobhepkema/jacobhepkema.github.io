@@ -56,7 +56,7 @@ function init() {
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(
-        45,
+        40,
         window.innerWidth / window.innerHeight,
         0.1,
         1000
@@ -67,7 +67,7 @@ function init() {
     // Set up the camera to view the scene
     camera.position.z = 400;
     camera.position.y = 0;
-    camera.rotation.z = -45 * Math.PI / 180;
+    camera.rotation.z = -60 * Math.PI / 180;
 
     // Create the DNA strand
     const n_sequences = 1;
