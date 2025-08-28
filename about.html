@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- following lines retrieve the google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800" rel="stylesheet">
+  <title>about</title>
+  <style>
+    html,
+    body {
+      background: rgb(254, 250, 243);
+      font-family: 'Google Sans Code', 'Courier New', Courier, monospace; 
+      max-width: 660pt;
+      margin: 40pt auto 0 auto;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      font-style: normal;
+      color: rgb(44, 44, 44);
+    }
+
+    b {
+      font-weight: bold;
+    }
+
+    p {
+      text-align: left;
+      margin-left: 40pt;
+    }
+
+    h2 {
+      margin-left: 20pt;
+      color: rgb(44, 44, 44);
+    }
+
+    a {
+      color: rgb(23, 141, 235);
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: rgb(41, 49, 23);
+      color: rgb(254, 250, 243);
+      text-align: center;
+      padding: 12px 0;
+      margin-top: 84px;
+    }
+  </style>
+</head>
+
+<body>
+
+	<h1>>about</h1>
+		
+		<p>
+		I'm Jacob, I am interested in researching <b>gene regulation</b> using <b>machine learning methods</b>, and I enjoy spending time in the wet-lab to create tailored datasets for this. I'm now a Postdoctoral scientist in the <a href="https://www.crg.eu/en/programmes-groups/velten-lab">Velten Lab</a> at the CRG in Barcelona.
+		<br>
+		<br>I did my PhD in the <a href="https://www.sanger.ac.uk/group/parts-group/">Parts Lab</a> at the Wellcome Sanger Institute in Hinxton / Cambridge University, and before that I worked in the <a href="https://www.sanger.ac.uk/group/hemberg-group/">Hemberg Lab</a>, at the Sanger as well (now at <a href="https://hemberg-lab.github.io/">HMS &amp; Brigham and Women's Hospital</a>).
+		</p>
+
+	<h1>>research</h1>
+		
+	<h2>>peer-reviewed</h2>
+
+		<p>
+		<img src="img/scover_logo.png" width='200px'>
+		<ul>
+			<li><u>J Hepkema</u>, NK Lee, BJ Stewart, S Ruangroengkulrith, V Charoensawan, MR Clatworthy, M Hemberg. Predicting the impact of sequence motifs on gene regulation using single-cell data. <i>Genome Biology</i> 24, 189 (2023). <a href="https://doi.org/10.1186/s13059-023-03021-9">https://doi.org/10.1186/s13059-023-03021-9</a><br>
+			<ul>
+				<li>In this paper, we developed a shallow convolutional neural network for the prediction of pseudobulked scRNA-seq data from the promoter sequence. The network performs simultaneous <i>de novo</i> inference of sequence motifs, as well as their influence on expression. The analysis tools include ways to summarise the found patterns per cell type category, as well as ways to relate the pseudobulk-specific influence scores to the expression of the relevant TFs in the pseudobulks.
+				<li>We additionally show that the network can be trained to predict pseudobulked scATAC-seq data from the peak sequence; what's nice is that if you have a multi-ome dataset, you can relate the influence scores back to the expression patterns of the relevant TFs in the same pseudobulks.
+				<li>Also see associated computational tool <b>scover</b>: <a href="https://github.com/jacobhepkema/scover">https://github.com/jacobhepkema/scover</a>.
+			</ul>
+		</ul>
+		</p>
+		<p>
+		More cool research on the way :-)
+		</p>
+	<h2>>pre-prints</h2>
+		<p>
+		I've had some part in the following projects:
+		<ul>
+			<li>J Koeppel, P Murat, G Girling, EM Peets, M Gouley, V Rebernig, A Maheshwari, <u>J Hepkema</u>, J Weller, JH Johnkingsly Jebaraj, R Crawford, FG Liberante, L Parts. Resolution of a human super-enhancer by targeted genome randomisation. <i>BioRxiv</i> (2025). <a href="https://doi.org/10.1101/2025.01.14.632548">https://doi.org/10.1101/2025.01.14.632548</a><br>
+			<ul>
+				<li>For this paper, I benchmarked whether computational models such as ABC, rE2G, and Borzoi would be able to predict the importance of enhancers in a super-enhancer cluster (or the effect of their deletions) on the expression of <i>OTX2</i>. (see <a href="https://www.biorxiv.org/content/biorxiv/early/2025/01/14/2025.01.14.632548/DC2/embed/media-2.pdf?download=true">supplementary figure 14 in this PDF</a>).
+			</ul>
+			<br>
+			<li>K Tomberg, L Antunes, Y Pan, <u>J Hepkema</u>, DA Garyfallos, A Mahfouz, A Bradley. Intronization enhances expression of S-protein and other transgenes challenged by cryptic splicing. <i>BioRxiv</i> (2021). <a href="https://doi.org/10.1101/2021.09.15.460454">https://doi.org/10.1101/2021.09.15.46045</a><br>
+		 	<ul>
+				<li>For this paper, I wrote some processing scripts to identify short deletions (splicing) in long-read direct RNA-seq data using CIGAR string data wrangling.
+			</ul>
+		</ul>
+		</p>
+	<footer>
+		<p>Made with plain HTML &amp; CSS. Uses <a href="https://fonts.google.com/specimen/Google+Sans+Code">Google Sans Code</a>. &copy; 2025 Jacob Hepkema, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>.</p>
+    	</footer>
+</body>
+
+</html>
