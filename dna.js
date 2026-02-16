@@ -86,11 +86,11 @@ function init() {
         createDNA(sequence, new THREE.Vector3((-sequence.length * 8) / 2, spacing * (-1 * mid_point + i), 0));
     }
 
-    window.addEventListener('mousemove', onMouseMove, false);
+    window.addEventListener('pointermove', onPointerMove, false);
+    window.addEventListener('pointerdown', onPointerMove, false);
 }
 
-function onMouseMove(event) {
-    event.preventDefault();
+function onPointerMove(event) {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
 }
