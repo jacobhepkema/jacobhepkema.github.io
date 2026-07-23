@@ -188,15 +188,15 @@ function animate() {
     // rotate each DNA strand separately
     scene.children.forEach((child) => {
         if (child.userData.type === 'nucleotide') {
-            child.rotation.x += 0.01;
+            child.rotation.x += 0.003;
         }
         else if (child.userData.type === 'backbone') {
-            child.rotation.x += 0.01;
+            child.rotation.x += 0.003;
         }
     });
     // rotate the whole scene using mouse x and y
-    scene.rotation.y = THREE.MathUtils.lerp(scene.rotation.y, (mouse.x * Math.PI) / 10, 0.1)
-    scene.rotation.x = THREE.MathUtils.lerp(scene.rotation.x, (mouse.y * Math.PI) / 10, 0.1)
+    scene.rotation.y = THREE.MathUtils.lerp(scene.rotation.y, (mouse.x * Math.PI) / 10, 0.3)
+    scene.rotation.x = THREE.MathUtils.lerp(scene.rotation.x, (mouse.y * Math.PI) / 10, 0.3)
 
     renderer.render(scene, camera);
 }
